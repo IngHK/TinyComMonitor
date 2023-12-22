@@ -14,7 +14,7 @@ Example of monitoring outputs:
 * consists of hardware that is connected to the full-duplex COM lines (UARTs), monitors the data traffic and visualizes them on a terminal computer e.g. with PuTTY as terminal software
 * can monitor each kind of serial line physic (e.g. RS-232, RS-485, RS-422, TTL, ...)   
 * uses cheap and easy procurable hardware components and is simple to assemble on a breadboard
-* runs on the widely used [*Black Pill*](https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1) board with [STM32F401 microcontroller](https://en.wikipedia.org/wiki/STM32) and this project provides the ready-to-flash binary firmware file
+* runs on the widely used [WeAct Studio *Black Pill*](https://github.com/WeActStudio/WeActStudio.MiniSTM32F4x1) board with the [STM32F401 microcontroller](https://www.st.com/en/microcontrollers-microprocessors/stm32f401.html) and this project provides the ready-to-flash binary firmware file
 
 ## Features
 
@@ -45,7 +45,7 @@ TinyComMonitor (currently) uses a 1024 byte buffer to buffer data bursts, but wi
 Take care about the maximum baudrate support by the *PHY* converter, which can be lower than 921600 Baud.
 The below described RS-232 hardware setup uses normally the [MAX3232](https://www.analog.com/en/products/max3232.html) (or a clone), which supports only up to 250 kBaud.
 
-### Tips
+### Advices
 
 * connect the *Black Pill* board directly to a USB port of the terminal PC. Several USB device connected to PC via USB 2.0 Hubs share the USB bandwith 
 
@@ -83,13 +83,13 @@ The below described RS-232 hardware setup uses normally the [MAX3232](https://ww
 
 ### Software
 
-0. Flash [](Release/TinyComMonitor.hex) into *Black Pill* board using [STM32CubeProgrammer software](https://www.st.com/en/development-tools/stm32cubeprog.html) via USB. After programming the STM32 act and is visible as serial USB device in the device manager of the terminal PC
-0. Start PuTTY and connect to the serial USB device COMx (x is a number). The connection settings of the serial USB device are irrelevant and can be set arbitrarily. These have nothing to do with the connection settings of the COM lines to be monitored
+1. Flash [Release/TinyComMonitor.hex](Release/TinyComMonitor.hex) into *Black Pill* board using [STM32CubeProgrammer software](https://www.st.com/en/development-tools/stm32cubeprog.html) via USB. After programming the STM32 acts and is visible as serial (COM) USB device in the device manager of the terminal PC
+2. Start PuTTY (or any other VT-100 supporting terminal software) and connect to the serial USB device COMx (x is a number). The connection settings of the serial USB device are irrelevant and can be set arbitrarily. These have nothing to do with the connection settings of the COM lines to be monitored
 
 ## Licenses
 
 * TinyComMonitor (folders [TinyComMonitor](TinyComMonitor), [Images](Images), [Release](Release) and [Testdata](Testdata)): GPL-3.0
-* [ST](https://www.st.com/content/st_com/en.html) [STM32CubeF4 MCU Firmware Package](https://github.com/STMicroelectronics/STM32CubeF4) (folders [Core](Core), [Drivers](Drivers), [Middlewares](Middlewares) and [USB_DEVICE](USB_DEVICE)): see file headers and license files there  
+* [STM32CubeF4 MCU Firmware Package](https://github.com/STMicroelectronics/STM32CubeF4) (folders [Core](Core), [Drivers](Drivers), [Middlewares](Middlewares) and [USB_DEVICE](USB_DEVICE)) is provided by [ST](https://www.st.com/content/st_com/en.html): see file headers and license files there  
 
 ## Feedback and Contribution
 
